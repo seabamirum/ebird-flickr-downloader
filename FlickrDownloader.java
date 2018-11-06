@@ -34,14 +34,19 @@ public abstract class FlickrDownloader
 		
 		System.out.println("Writing flickr photo " + photoId + " to " + filePath + "...");
 		
-		Photo photo = pi.getPhoto(photoId);
-		
+		Photo photo = pi.getPhoto(photoId);		
 		BufferedImage bufferedImage = pi.getImage(photo,Size.ORIGINAL);
-		ImageIO.write(bufferedImage, "jpg", outputfile);
+		ImageIO.write(bufferedImage,photo.getOriginalFormat(),outputfile);
 	}
 	
 	public static void main(String[] args) throws IOException
 	{
+		if (args.length != 2)
+		{
+			System.out.println("USAGE: 1st argument is path to directory that contains MyEBirdData.csv file (e.g. downloads/ebird). 2nd argument is your flickr username.");
+			return;
+		}
+		
 		String outputPath = args[0];		
 		String flickrUser=args[1];
 		
@@ -76,7 +81,7 @@ public abstract class FlickrDownloader
 							urlEnd = obsComments.indexOf("\"", urlBegin);
 						
 						String photoId = obsComments.substring(urlBegin,urlEnd);
-						String speciesName = values.get(1).replace(" ","_");
+						String speciesName = values.get(1).replace(" ","_").replace("/","_");
 						String subId=values.get(0);
 						
 						try
