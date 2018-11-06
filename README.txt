@@ -1,5 +1,5 @@
 Download the Java JRE if it's not already installed https://java.com/en/download/
-Download ebird-flickr-downloader.jar
+Download ebird-flickr-downloader.jar (under RELEASES tab)
 Open a command prompt
 Switch to the directory that has ebird-flickr-downloader.jar
 Argument 1 to the program is the directory of your "MyEBirdData.csv" file from https://ebird.org/downloadMyData
