@@ -9,3 +9,5 @@ Run the program using java -jar jarfilename arg1 arg2
 EXAMPLE, if ebird-flickr-downloader.jar is in downloads directory and "MyEBirdData.csv" file is in documents/ebird/mydata
 cd downloads
 java -jar ebird-flickr-downloader.jar documents/ebird/mydata flickrusername
+
+NOTE: I haven't figured out a way to download originals from flickr. The API says original download is only available for PRO users. However it seems to return the largest possible size below that.  If you have a lot of photos you may want to consider signing up for PRO, at least temporarily.
